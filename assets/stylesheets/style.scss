@@ -1,0 +1,39 @@
+// brand variables
+// make sure most of your rules point to that
+
+// Fonts
+$font-title: Georgia, serif;
+$font-text: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-mono: "Courier New", Courier, monospace;
+$font-icon: FontAwesome;
+
+// Gap
+$gap-1: 10px;
+
+// Colors
+$color-0: white;
+$color-1: black;
+$color-2: grey;
+$color-3: red;
+$color-4: green;
+$color-5: blue;
+
+// for each import:
+// 1. create new file as _IMPORTNAMEHERE.scss
+// 2. inside it, type the same name('base' for base, 'mixins' for mixins, etc), hit tab, to populate content, save
+// 3. uncomment import to activate
+
+// universal rules (try not to change it, and update often)
+
+@import 'base';
+@import 'mixins';
+@import 'colors';
+@import 'visibility';
+// @import 'animate';
+// @import 'print';
+
+// project rules (feel free to edit)
+
+@import 'layout';
+// @import 'flexslider';
+// @import 'modules';
