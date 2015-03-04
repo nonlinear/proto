@@ -1,51 +1,574 @@
-
 <!DOCTYPE html>
-<html class="billboard-store">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>Redesign</title>
-  <link href="assets/stylesheets/style.css" media="all" rel="stylesheet" />
-  <link href="https://fontastic.s3.amazonaws.com/HSvK5PVbYZRd2RpeBs43LU/icons.css" rel="stylesheet">
-  <base target="proto">
+  <meta charset="UTF-8">
+  <title>Carbon Event Page</title>
+  <link rel="stylesheet" href="assets/stylesheets/style.css" media="screen" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="user-scalable=0, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 </head>
-<body class="proto">
-  <div class="container">
-    <h1>Carbon Redesign</h1>
-    <a class="bookmarklet" href="javascript:void((function(d)%7Bif(self!=top%7C%7Cd.getElementById('toolbar')&&d.getElementById('toolbar').getAttribute('data-resizer'))return%20false;d.write('%3C!DOCTYPE%20HTML%3E%3Chtml%20style=%22opacity:0;%22%3E%3Chead%3E%3Cmeta%20charset=%22utf-8%22/%3E%3C/head%3E%3Cbody%3E%3Ca%20data-viewport=%22240x240%22%20data-icon=%22handy%22%3EMobile%3C/a%3E%3Ca%20data-viewport=%22320x480%22%20data-icon=%22mobile%22%3EMobile%20(e.g.%20Apple%20iPhone)%3C/a%3E%3Ca%20data-viewport=%22320x568%22%20data-icon=%22mobile%22%20data-version=%225%22%3EApple%20iPhone%205%3C/a%3E%3Ca%20data-viewport=%22600x800%22%20data-icon=%22small-tablet%22%3ESmall%20Tablet%3C/a%3E%3Ca%20data-viewport=%22768x1024%22%20data-icon=%22tablet%22%3ETablet%20(e.g.%20Apple%20iPad%202-3rd,%20mini)%3C/a%3E%3Ca%20data-viewport=%221024x768%22%20data-icon=%22display%22%20data-version=%2217%E2%80%B3%22%3E17%E2%80%B3%20display%3C/a%3E%3Ca%20data-viewport=%221280x800%22%20data-icon=%22notebook%22%3EWidescreen%3C/a%3E%3Ca%20data-viewport=%222560x1600%22%20data-icon=%22display%22%20data-version=%2230%E2%80%B3%22%3E30%E2%80%B3%20Apple%20Cinema%20display%3C/a%3E%3Cscript%20src=%22http://lab.maltewassermann.com/viewport-resizer/resizer.min.js%22%3E%3C/script%3E%3C/body%3E%3C/html%3E')%7D)(document));">Viewport Resizer</a>
-    <div class="grid">
-      <div class="cell">
-       <h3>Originals</h3>
-       <ul>
-       <li>Seating chart, desktop<br><a href="../originals/eventPage.pdf">PDF</a> | <a href="../originals/eventPage.psd">PSD</a></li>
-       <li>Seating chart, device<br><a href="../originals/eventPageMobile_solo.jpg">JPG 1</a> | <a href="../originals/eventPageMobileClosed_solo.jpg">JPG 2</a></li>
-      </ul>
-    </div>
-    <div class="cell">
-      <h3>Purchase Path</h3>
-      <ul>
-        <li><a class="not" href="browse.html">Browse</a></li>
-        <li><a href="seating.html">Seating chart</a></li>
-        <li><a class="not" href="delivery.html">Delivery</a></li>
-        <li><a class="not" href="payment.html">Payment</a></li>
-        <li><a class="not" href="confirm.html">Confirmation</a></li>
-      </ul>
-    </div>
-    <div class="cell">
-      <h3>Browse Variations</h3>
-      <ul>
-        <li><a class="not" href="browse_performer.html">Performer</a></li>
-        <li><a class="not" href="browse_venue.html">Venue</a></li>
-        <li><a class="not" href="browse_category.html">Category</a></li>
-        <li><a class="not" href="browse_custom.html">Custom copy</a></li>
-      </ul>
-    </div>
+<body id="select" class="offset-watch">
+  <div class="offset-content">
+    <a href="#" onClick="$('.offset-watch').toggleClass('offset-active')" class="offset-toggle"></a>
+    <form class="search-content">
+      <i class="icon-search"></i>
+      <input type="search" class="search" placeholder="Search">
+    </form>
+    <a href="#"><i class="icon-user"></i>User Settings</a>
+    <div class="categories">
+      <select>
+        <option>Sports</option>
+        <option></option>
+        <option>MLB</option>
+        <option>NBA</option>
+        <option>NCAA Basketball</option>
+        <option>NCAA Football</option>
+        <option>NFL</option>
+        <option>NHL</option>
+        <option>Auto Racing</option>
+        <option>Baseball</option>
+        <option>Basketball</option>
+        <option>Cycling</option>
+        <option>Extreme Sports</option>
+        <option>Fighting</option>
+        <option>Football</option>
+        <option>Golf</option>
+        <option>Hockey</option>
+        <option>Horse Racing</option>
+        <option>International Games</option>
+        <option>Lacrosse</option>
+        <option>Rodeo</option>
+        <option>Rugby</option>
+        <option>Soccer</option>
+        <option>Tennis</option>
+        <option>Volleyball</option>
+        <option></option>
+        <option>View All</option>
+      </select>
 
+      <select>
+        <option>Concerts</option>
+        <option></option>
+        <option>Alternative &amp; Indie</option>
+        <option>Alternative Rock</option>
+        <option>Cabaret</option>
+        <option>Classical</option>
+        <option>Comedy</option>
+        <option>Country &amp; Folk</option>
+        <option>Dance/Electronic</option>
+        <option>Family</option>
+        <option>Festivals</option>
+        <option>Hard Rock/Metal</option>
+        <option>Jazz &amp; Blues</option>
+        <option>Latin</option>
+        <option>Miscellaneous</option>
+        <option>New Age &amp; Spiritual</option>
+        <option>R&amp;B/Urban Soul</option>
+        <option>Rap &amp; Hip-Hop</option>
+        <option>Rock &amp; Pop</option>
+        <option>World Music</option>
+        <option></option>
+        <option>View All</option>
+      </select>
+
+      <select>
+        <option>Theatre</option>
+        <option></option>
+        <option>Ballet &amp; Dance</option>
+        <option>Musicals</option>
+        <option>Opera</option>
+        <option>Plays</option>
+        <option></option>
+        <option>View All</option>
+      </select>
+
+      <select>
+        <option>Special Events</option>
+        <option></option>
+        <option>Award Shows</option>
+        <option>Exclusive Parties</option>
+        <option>Fundraisers</option>
+        <option>TV Shows</option>
+        <option></option>
+        <option>View All</option>
+      </select>
+
+    </div>
   </div>
-  <footer class="footer">
-   <a href="mailto:info@nicholasfrota.com">Nicholas Frota</a>, February 2015
- </footer>
+  <div class="offset-main offset-swipe">
+    <header class="header search-watch">
+      <nav class="container">
+        <a href="#" class="logo"></a>
+        <div class="event">
+          <div class="title">Golden Gate Warriors @ New York Knicks</div>
+          <div class="subtitle">
+            <span class="date">Saturday, February 7th 2015 at 7:30 pm</span>
+            <span class="place">Madison Square Garden, New York, NY</span>
+          </div>
+        </div>
+        <div class="actions">
+          <form class="search-content">
+            <i class="icon-search"></i>
+            <input type="search" class="search" placeholder="Search">
+          </form>
+          <a href="#" onClick="$('.search-watch').toggleClass('search-active')" class="search-toggle"></a>
+          <a href="#" onClick="$('.offset-watch').toggleClass('offset-active')" class="offset-toggle"></a>
+        </div>
+      </nav>
+    </header>
+    <section class="container">
+     <article class="map collapse-watch collapse-active filter-watch">
+       <div class="collapse-content">
+        <nav>
+          <a href="#"><i class="icon-plus"></i></a>
+          <a href="#"><i class="icon-minus"></i></a>
+        </nav>
+        <img src="assets/images/static_chart.png">
+      </div>
+      <header class="main">
+        <a href="#" onClick="$('.collapse-watch').toggleClass('collapse-active')" class="collapse-toggle" class="collapse-toggle"><span>Map</span></a>
+        <div class="event">
+          <div class="title">Golden Gate Warriors<br>@ New York Knicks</div>
+        </div>
+        <a href="#" onClick="$('.filter-watch').toggleClass('filter-active')" class="filter-toggle" class="filter-toggle"><span>Filter</span>
+        </a>
+      </header>
+      <div class="filter-content filter-group">
+        <header>
+          <h3>Filters</h3>
+          <a href="#">View Parking Tickets</a>
+        </header>
+        <nav>
+          <div class="filter">
+            <p>Quantity:</p>
+            <select>
+              <option>Any</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10 or More</option>
+            </select>
+            <p>Price:</p>
+            <input type="range">
+          </div>
+          <div class="filter">
+            <p>Sorted by:</p>
+            <select>
+              <option>Price: High to Low</option>
+              <option>Price: Low to High</option>
+              <option>Sections: Ascending</option>
+              <option>Sections: Descending</option>
+              <option>Rows: Ascending</option>
+              <option>Rows: Descending</option>
+            </select>
+            <label >
+              <input type="checkbox">
+              E-Tickets only
+            </label>
+          </div>
+        </nav>
+      </div>
+    </article>
+    <article class="list">
+      <div class="filter-group">
+        <header>
+          <h3>Filters</h3>
+          <a href="#">View Parking Tickets</a>
+
+        </header>
+        <nav>
+          <div class="filter">
+            <p>Quantity:</p>
+            <select>
+              <option>Any</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10 or More</option>
+            </select>
+            <p>Price:</p>
+            <input type="range">
+          </div>
+          <div class="filter">
+            <p>Sorted by:</p>
+            <select>
+              <option>Price: High to Low</option>
+              <option>Price: Low to High</option>
+              <option>Sections: Ascending</option>
+              <option>Sections: Descending</option>
+              <option>Rows: Ascending</option>
+              <option>Rows: Descending</option>
+            </select>
+            <label >
+              <input type="checkbox">
+              E-Tickets only
+            </label>
+          </div>
+        </nav>
+      </div>
+      <div class="row instant">
+        <div class="grid">
+          <div class="column info">
+            <div class="title">Section 215</div>
+            <div class="subtitle">Row: 11 | Qty: 1</div>
+            <div class="instant">Instant Delivery</div>
+            <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+          </div>
+          <div class="column details">
+            <div class="price">
+              $55/
+              <span class="sig">each</span>
+            </div>
+            <div class="shipping">Expected shipping: Dec 10</div>
+          </div>
+          <a href="#" class="column action">
+            <div class="button">Buy</div>
+          </a>
+        </div>
+        <div class="note-content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+        </div>
+      </div>
+      <div class="row instant note-watch">
+        <div class="grid">
+          <div class="column info">
+            <div class="title">Section 215</div>
+            <div class="subtitle">Row: 11 | Qty: 1</div>
+            <div class="instant">Instant Delivery</div>
+            <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+          </div>
+          <div class="column details">
+            <div class="price">
+              $55/
+              <span class="sig">each</span>
+            </div>
+            <div class="shipping">Expected shipping: Dec 10</div>
+          </div>
+          <a href="#" class="column action">
+            <div class="button">Buy</div>
+          </a>
+        </div>
+        <div class="note-content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+        </div>
+      </div>
+
+      <div class="row instant">
+        <div class="grid">
+          <div class="column info">
+            <div class="title">Section 215</div>
+            <div class="subtitle">Row: 11 | Qty: 1</div>
+            <div class="instant">Instant Delivery</div>
+            <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+          </div>
+          <div class="column details">
+            <div class="price">
+              $55/
+              <span class="sig">each</span>
+            </div>
+            <div class="shipping">Expected shipping: Dec 10</div>
+          </div>
+          <a href="#" class="column action">
+            <div class="button">Buy</div>
+          </a>
+        </div>
+        <div class="note-content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+        </div>
+      </div>
+      <div class="row">
+       <div class="grid">
+         <div class="column info">
+           <div class="title">Section 215</div>
+           <div class="subtitle">Row: 11 | Qty: 1</div>
+           <div class="instant">Instant Delivery</div>
+           <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+         </div>
+         <div class="column details">
+           <div class="price">
+             $55/
+             <span class="sig">each</span>
+           </div>
+           <div class="shipping">Expected shipping: Dec 10</div>
+         </div>
+         <a href="#" class="column action">
+           <div class="button">Buy</div>
+         </a>
+       </div>
+       <div class="note-content">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+       </div>
+     </div>
+     <div class="row">
+       <div class="grid">
+         <div class="column info">
+           <div class="title">Section 215</div>
+           <div class="subtitle">Row: 11 | Qty: 1</div>
+           <div class="instant">Instant Delivery</div>
+           <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+         </div>
+         <div class="column details">
+           <div class="price">
+             $55/
+             <span class="sig">each</span>
+           </div>
+           <div class="shipping">Expected shipping: Dec 10</div>
+         </div>
+         <a href="#" class="column action">
+           <div class="button">Buy</div>
+         </a>
+       </div>
+       <div class="note-content">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+       </div>
+     </div>
+     <div class="row">
+       <div class="grid">
+         <div class="column info">
+           <div class="title">Section 215</div>
+           <div class="subtitle">Row: 11 | Qty: 1</div>
+           <div class="instant">Instant Delivery</div>
+           <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+         </div>
+         <div class="column details">
+           <div class="price">
+             $55/
+             <span class="sig">each</span>
+           </div>
+           <div class="shipping">Expected shipping: Dec 10</div>
+         </div>
+         <a href="#" class="column action">
+           <div class="button">Buy</div>
+         </a>
+       </div>
+       <div class="note-content">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+       </div>
+     </div>
+     <div class="row">
+       <div class="grid">
+         <div class="column info">
+           <div class="title">Section 215</div>
+           <div class="subtitle">Row: 11 | Qty: 1</div>
+           <div class="instant">Instant Delivery</div>
+           <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+         </div>
+         <div class="column details">
+           <div class="price">
+             $55/
+             <span class="sig">each</span>
+           </div>
+           <div class="shipping">Expected shipping: Dec 10</div>
+         </div>
+         <a href="#" class="column action">
+           <div class="button">Buy</div>
+         </a>
+       </div>
+       <div class="note-content">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+       </div>
+     </div>
+
+
+     <div class="row">
+       <div class="grid">
+         <div class="column info">
+           <div class="title">Section 215</div>
+           <div class="subtitle">Row: 11 | Qty: 1</div>
+           <div class="instant">Instant Delivery</div>
+           <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+         </div>
+         <div class="column details">
+           <div class="price">
+             $55/
+             <span class="sig">each</span>
+           </div>
+           <div class="shipping">Expected shipping: Dec 10</div>
+         </div>
+         <a href="#" class="column action">
+           <div class="button">Buy</div>
+         </a>
+       </div>
+       <div class="note-content">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+       </div>
+     </div>
+
+
+     <div class="row">
+       <div class="grid">
+         <div class="column info">
+           <div class="title">Section 215</div>
+           <div class="subtitle">Row: 11 | Qty: 1</div>
+           <div class="instant">Instant Delivery</div>
+           <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+         </div>
+         <div class="column details">
+           <div class="price">
+             $55/
+             <span class="sig">each</span>
+           </div>
+           <div class="shipping">Expected shipping: Dec 10</div>
+         </div>
+         <a href="#" class="column action">
+           <div class="button">Buy</div>
+         </a>
+       </div>
+       <div class="note-content">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+       </div>
+     </div>
+
+
+     <div class="row">
+       <div class="grid">
+         <div class="column info">
+           <div class="title">Section 215</div>
+           <div class="subtitle">Row: 11 | Qty: 1</div>
+           <div class="instant">Instant Delivery</div>
+           <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+         </div>
+         <div class="column details">
+           <div class="price">
+             $55/
+             <span class="sig">each</span>
+           </div>
+           <div class="shipping">Expected shipping: Dec 10</div>
+         </div>
+         <a href="#" class="column action">
+           <div class="button">Buy</div>
+         </a>
+       </div>
+       <div class="note-content">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="grid">
+         <div class="column info">
+           <div class="title">Section 215</div>
+           <div class="subtitle">Row: 11 | Qty: 1</div>
+           <div class="instant">Instant Delivery</div>
+           <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+         </div>
+         <div class="column details">
+           <div class="price">
+             $55/
+             <span class="sig">each</span>
+           </div>
+           <div class="shipping">Expected shipping: Dec 10</div>
+         </div>
+         <a href="#" class="column action">
+           <div class="button">Buy</div>
+         </a>
+       </div>
+       <div class="note-content">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="grid">
+         <div class="column info">
+           <div class="title">Section 215</div>
+           <div class="subtitle">Row: 11 | Qty: 1</div>
+           <div class="instant">Instant Delivery</div>
+           <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+         </div>
+         <div class="column details">
+           <div class="price">
+             $55/
+             <span class="sig">each</span>
+           </div>
+           <div class="shipping">Expected shipping: Dec 10</div>
+         </div>
+         <a href="#" class="column action">
+           <div class="button">Buy</div>
+         </a>
+       </div>
+       <div class="note-content">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="grid">
+         <div class="column info">
+           <div class="title">Section 215</div>
+           <div class="subtitle">Row: 11 | Qty: 1</div>
+           <div class="instant">Instant Delivery</div>
+           <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+         </div>
+         <div class="column details">
+           <div class="price">
+             $55/
+             <span class="sig">each</span>
+           </div>
+           <div class="shipping">Expected shipping: Dec 10</div>
+         </div>
+         <a href="#" class="column action">
+           <div class="button">Buy</div>
+         </a>
+       </div>
+       <div class="note-content">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="grid">
+         <div class="column info">
+           <div class="title">Section 215</div>
+           <div class="subtitle">Row: 11 | Qty: 1</div>
+           <div class="instant">Instant Delivery</div>
+           <a href="#" onClick="$('.note-watch').toggleClass('note-active')" class="note-toggle" class="note-toggle">Details</a>
+         </div>
+         <div class="column details">
+           <div class="price">
+             $55/
+             <span class="sig">each</span>
+           </div>
+           <div class="shipping">Expected shipping: Dec 10</div>
+         </div>
+         <a href="#" class="column action">
+           <div class="button">Buy</div>
+         </a>
+       </div>
+       <div class="note-content">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam necessitatibus nesciunt praesentium, tempora veritatis? Vitae voluptate totam non maiores!
+       </div>
+     </div>
+   </article>
+   <article class="map large">
+    <nav>
+      <a href="#"><i class="icon-plus"></i></a>
+      <a href="#"><i class="icon-minus"></i></a>
+    </nav>
+    <img src="assets/images/static_chart.png">
+  </article>
+</section>
 </div>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>!window.jQuery && document.write(unescape('%3Cscript src="assets/javascript/jquery.min.js"%3E%3C/script%3E'))</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<script>!window.jQuery && document.write(unescape('%3Cscript src="assets/javascript/modernizr.js"%3E%3C/script%3E'))</script>
+<script src="assets/javascript/floatlabels.js" ></script>
+<script src="assets/javascript/detectizr.js"></script>
+<script src="assets/javascript/scripts.js"></script>
 </body>
+
 </html>

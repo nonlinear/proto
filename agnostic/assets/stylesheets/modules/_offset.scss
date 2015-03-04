@@ -1,4 +1,7 @@
 .offset-content {
+  h1, h2, h3, h4 {
+    color: white;
+  }
   select {
     display: block;
     width: 100%;
@@ -16,7 +19,6 @@
       height: 30px;
       overflow: hidden;
       displaY: inline-block;
-
     }
   }
 }
