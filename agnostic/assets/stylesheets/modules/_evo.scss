@@ -1,0 +1,92 @@
+[data-icon]:before {
+  font-family: "evo" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "evo" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-up:before {
+  content: "f";
+}
+.icon-arrow-down:before {
+  content: "i";
+}
+.icon-save:before {
+  content: "p";
+}
+.icon-edit:before {
+  content: "t";
+}
+.icon-alert:before {
+  content: "o";
+}
+.icon-error:before {
+  content: "u";
+}
+.icon-spinner:before {
+  content: "v";
+}
+.icon-flash:before {
+  content: "w";
+}
+.icon-dropup:before {
+  content: "z";
+}
+.icon-dropdown:before {
+  content: "A";
+}
+.icon-minus:before {
+  content: "B";
+}
+.icon-arrow-left:before {
+  content: "C";
+}
+.icon-arrow-right:before {
+  content: "D";
+}
+.icon-angle-right:before {
+  content: "E";
+}
+.icon-toggle-link:before {
+  content: "G";
+}
+.icon-plus:before {
+  content: "j";
+}
+.icon-cog-gear:before {
+  content: "b";
+}
+.icon-cancel:before {
+  content: "q";
+}
+.icon-logout:before {
+  content: "s";
+}
+.icon-menu:before {
+  content: "F";
+}
+.icon-search:before {
+  content: "c";
+}
+.icon-user:before {
+  content: "a";
+}

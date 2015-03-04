@@ -1,0 +1,1421 @@
+$countDefault: 1s !default;
+$durationDefault: 1s !default;
+$delayDefault: 0s !default;
+$functionDefault: ease !default;
+$fillDefault: both;
+$visibilityDefault: hidden !default;
+
+@mixin count($count: 1) {
+  -webkit-animation-iteration-count: $count;
+  -moz-animation-iteration-count: $count;
+  -ms-animation-iteration-count: $count;
+  -o-animation-iteration-count: $count;
+  animation-iteration-count: $count;
+}
+
+@mixin duration($duration: 1s) {
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -ms-animation-duration: $duration;
+  -o-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+@mixin delay($delay: .2s) {
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  -ms-animation-delay: $delay;
+  -o-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+@mixin function($function: ease) {
+  -webkit-animation-timing-function: $function;
+  -moz-animation-timing-function: $function;
+  -ms-animation-timing-function: $function;
+  -o-animation-timing-function: $function;
+  animation-timing-function: $function;
+}
+
+@mixin fill-mode($fill: both) {
+  -webkit-animation-fill-mode: $fill;
+  -moz-animation-fill-mode: $fill;
+  -ms-animation-fill-mode: $fill;
+  -o-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}
+
+@mixin visibility($visibility: hidden) {
+  -webkit-backface-visibility: $visibility;
+  -moz-backface-visibility: $visibility;
+  -ms-backface-visibility: $visibility;
+  -o-backface-visibility: $visibility;
+  backface-visibility: $visibility;
+}
+
+@mixin transform-origin($transform-origin: center center) {
+  -webkit-transform-origin: $transform-origin;
+  -moz-transform-origin: $transform-origin;
+  -ms-transform-origin: $transform-origin;
+  -o-transform-origin: $transform-origin;
+  transform-origin: $transform-origin;
+}
+
+@mixin transform-style($transform-style: flat) {
+  -webkit-transform-style: $transform-style;
+  -moz-transform-style: $transform-style;
+  -o-transform-style: $transform-style;
+  transform-style: $transform-style;
+}
+
+@mixin animation-name($animation-name) {
+  -webkit-animation-name: $animation-name;
+  -moz-animation-name: $animation-name;
+  -ms-animation-name: $animation-name;
+  -o-animation-name: $animation-name;
+  animation-name: $animation-name;
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+// INDEX OF ATTENTION SEEKERS
+
+@include keyframes(bounce) {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}
+
+@mixin bounce($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounce);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+@include keyframes(flash) {
+  0%, 50%, 100% {opacity: 1;}
+  25%, 75% {opacity: 0;}
+}
+
+@mixin flash($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(flash);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// originally authored by Nick Pettit - https://github.com/nickpettit/glide
+
+@include keyframes(pulse) {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+
+@mixin pulse($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(pulse);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(rubberBand) {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, .95, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@mixin rubberBand($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rubberBand);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(shake) {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+@mixin shake($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(shake);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(swing) {
+  20%, 40%, 60%, 80%, 100% { -webkit-transform-origin: top center; }
+  20% { -webkit-transform: rotate(15deg); }
+  40% { -webkit-transform: rotate(-10deg); }
+  60% { -webkit-transform: rotate(5deg); }
+  80% { -webkit-transform: rotate(-5deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+
+@mixin swing($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include transform-origin(top center);
+  @include animation-name(swing);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+@include keyframes(tada) {
+  0% {-webkit-transform: scale(1);}
+  10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
+  30%, 50%, 70%, 90% {-webkit-transform: scale(1.1) rotate(3deg);}
+  40%, 60%, 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
+  100% {-webkit-transform: scale(1) rotate(0);}
+}
+
+@mixin tada($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(tada);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// originally authored by Nick Pettit - https://github.com/nickpettit/glide
+
+@include keyframes(wobble) {
+  0% {-webkit-transform: translateX(0%);}
+  15% {-webkit-transform: translateX(-25%) rotate(-5deg);}
+  30% {-webkit-transform: translateX(20%) rotate(3deg);}
+  45% {-webkit-transform: translateX(-15%) rotate(-3deg);}
+  60% {-webkit-transform: translateX(10%) rotate(2deg);}
+  75% {-webkit-transform: translateX(-5%) rotate(-1deg);}
+  100% {-webkit-transform: translateX(0%);}
+}
+
+@mixin wobble($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(wobble);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF BOUNCING ENTRANCES
+
+@include keyframes(bounceIn) {
+  0% {opacity: 0; -webkit-transform: scale(.3);}
+  50% {opacity: 1; -webkit-transform: scale(1.05);}
+  70% {-webkit-transform: scale(.9);}
+  100% {-webkit-transform: scale(1);}
+}
+
+@mixin bounceIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounceIn);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+
+@include keyframes(bounceInDown) {
+  0% {opacity: 0; -webkit-transform: translateY(-2000px);}
+  60% {opacity: 1; -webkit-transform: translateY(30px);}
+  80% {-webkit-transform: translateY(-10px);}
+  100% {-webkit-transform: translateY(0);}
+}
+
+@mixin bounceInDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounceInDown);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+
+@include keyframes(bounceInLeft) {
+  0% {opacity: 0; -webkit-transform: translateX(-2000px);}
+  60% {opacity: 1; -webkit-transform: translateX(30px);}
+  80% {-webkit-transform: translateX(-10px);}
+  100% {-webkit-transform: translateX(0);}
+}
+
+@mixin bounceInLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounceInLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+
+@include keyframes(bounceInRight) {
+  0% {opacity: 0; -webkit-transform: translateX(2000px);}
+  60% {opacity: 1; -webkit-transform: translateX(-30px);}
+  80% {-webkit-transform: translateX(10px);}
+  100% {-webkit-transform: translateX(0);}
+}
+
+@mixin bounceInRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounceInRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(bounceInUp) {
+  0% {opacity: 0; -webkit-transform: translateY(2000px);}
+  60% {opacity: 1; -webkit-transform: translateY(-30px);}
+  80% {-webkit-transform: translateY(10px);}
+  100% {-webkit-transform: translateY(0);}
+}
+
+@mixin bounceInUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounceInUp);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF BOUNCING EXITS
+
+@include keyframes(bounceOut) {
+  0% {-webkit-transform: scale(1);}
+  25% {-webkit-transform: scale(.95);}
+  50% {opacity: 1; -webkit-transform: scale(1.1);}
+  100% {opacity: 0; -webkit-transform: scale(.3);}
+}
+
+@mixin bounceOut($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounceOut);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(bounceOutDown) {
+  0% {-webkit-transform: translateY(0);}
+  20% {opacity: 1; -webkit-transform: translateY(-20px);}
+  100% {opacity: 0; -webkit-transform: translateY(2000px);}
+}
+
+@mixin bounceOutDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounceOutDown);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(bounceOutLeft) {
+  0% {-webkit-transform: translateX(0);}
+  20% {opacity: 1; -webkit-transform: translateX(20px);}
+  100% {opacity: 0; -webkit-transform: translateX(-2000px);}
+}
+
+@mixin bounceOutLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounceOutLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+@include keyframes(bounceOutRight) {
+  0% {-webkit-transform: translateX(0);}
+  20% {opacity: 1; -webkit-transform: translateX(-20px);}
+  100% {opacity: 0; -webkit-transform: translateX(2000px);}
+}
+
+@mixin bounceOutRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounceOutRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(bounceOutUp) {
+  0% {-webkit-transform: translateY(0);}
+  20% {opacity: 1; -webkit-transform: translateY(20px);}
+  100% {opacity: 0; -webkit-transform: translateY(-2000px);}
+}
+
+@mixin bounceOutUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounceOutUp);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF FADING ENTRANCES
+
+@include keyframes(fadeIn) {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@mixin fadeIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeIn);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeInDown) {
+  0% {opacity: 0; -webkit-transform: translateY(-20px);}
+  100% {opacity: 1; -webkit-transform: translateY(0);}
+}
+
+@mixin fadeInDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeInDown);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeInDownBig) {
+  0% {opacity: 0; -webkit-transform: translateY(-2000px);}
+  100% {opacity: 1; -webkit-transform: translateY(0);}
+}
+
+@mixin fadeInDownBig($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeInDownBig);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeInLeft) {
+  0% {opacity: 0; -webkit-transform: translateX(-20px);}
+  100% {opacity: 1; -webkit-transform: translateX(0);}
+}
+
+@mixin fadeInLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeInLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeInLeftBig) {
+  0% {opacity: 0; transform: translateX(-2000px);}
+  100% {opacity: 1; transform: translateX(0);}
+}
+
+@mixin fadeInLeftBig($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeInLeftBig);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeInRight) {
+  0% {opacity: 0; transform: translateX(20px);}
+  100% {opacity: 1; transform: translateX(0);}
+}
+
+@mixin fadeInRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeInRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeInRightBig) {
+  0% {opacity: 0; transform: translateX(2000px);}
+  100% {opacity: 1; transform: translateX(0);}
+}
+
+@mixin fadeInRightBig($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeInRightBig);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+@include keyframes(fadeInUp) {
+  0% {opacity: 0; transform: translateY(20px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@mixin fadeInUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeInUp);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeInUpBig) {
+  0% {opacity: 0; transform: translateY(2000px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@mixin fadeInUpBig($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeInUpBig);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF FADING EXITS
+
+@include keyframes(fadeOut) {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@mixin fadeOut($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeOut);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+@include keyframes(fadeOutDown) {
+  0% {opacity: 1; transform: translateY(0);}
+  100% {opacity: 0; transform: translateY(20px);}
+}
+
+@mixin fadeOutDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeOutDown);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeOutDownBig) {
+  0% {opacity: 1; transform: translateY(0);}
+  100% {opacity: 0; transform: translateY(2000px);}
+}
+
+@mixin fadeOutDownBig($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeOutDownBig);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeOutLeft) {
+  0% {opacity: 1; transform: translateX(0);}
+  100% {opacity: 0; transform: translateX(-20px);}
+}
+
+@mixin fadeOutLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeOutLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeOutLeftBig) {
+  0% {opacity: 1; transform: translateX(0);}
+  100% {opacity: 0; transform: translateX(-2000px);}
+}
+
+@mixin fadeOutLeftBig($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeOutLeftBig);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeOutRight) {
+  0% {opacity: 1; transform: translateX(0);}
+  100% {opacity: 0; transform: translateX(20px);}
+}
+
+@mixin fadeOutRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeOutRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeOutRightBig) {
+  0% {opacity: 1; transform: translateX(0);}
+  100% {opacity: 0; transform: translateX(2000px);}
+}
+
+@mixin fadeOutRightBig($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeOutRightBig);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeOutUp) {
+  0% {opacity: 1; transform: translateY(0);}
+  100% {opacity: 0; transform: translateY(-20px);}
+}
+
+@mixin fadeOutUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeOutUp);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(fadeOutUpBig) {
+  0% {opacity: 1; transform: translateY(0);}
+  100% {opacity: 0; transform: translateY(-2000px);}
+}
+
+@mixin fadeOutUpBig($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeOutUpBig);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF FLIPPERS
+
+@include keyframes(flip) {
+  0% {transform: perspective(400px) rotateY(0); animation-timing-function: ease-out;}
+  40% {transform: perspective(400px) translateZ(150px) rotateY(170deg); animation-timing-function: ease-out;}
+  50% {transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1); animation-timing-function: ease-in;}
+  80% {transform: perspective(400px) rotateY(360deg) scale(.95); animation-timing-function: ease-in;}
+  100% {transform: perspective(400px) scale(1); animation-timing-function: ease-in;}
+}
+
+@mixin flip($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include transform-style(preserve-3d);
+  @include animation-name(flip);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(flipInX) {
+  0% {transform: perspective(400px) rotateX(90deg); opacity: 0;}
+  40% {transform: perspective(400px) rotateX(-10deg);}
+  70% {transform: perspective(400px) rotateX(10deg);}
+  100% {transform: perspective(400px) rotateX(0deg); opacity: 1;}
+}
+
+@mixin flipInX($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(flipInX);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(flipInY) {
+  0% {transform: perspective(400px) rotateY(90deg); opacity: 0;}
+  40% {transform: perspective(400px) rotateY(-10deg);}
+  70% {transform: perspective(400px) rotateY(10deg);}
+  100% {transform: perspective(400px) rotateY(0deg); opacity: 1;}
+}
+
+@mixin flipInY($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(flipInY);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(flipOutX) {
+  0% {transform: perspective(400px) rotateX(0deg); opacity: 1;}
+  100% {transform: perspective(400px) rotateX(90deg); opacity: 0;}
+}
+
+@mixin flipOutX($count: $countDefult, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(flipOutX);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(flipOutY) {
+  0% {transform: perspective(400px) rotateY(0deg); opacity: 1;}
+  100% {transform: perspective(400px) rotateY(90deg); opacity: 0;}
+}
+
+@mixin flipOutY($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(flipOutY);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF LIGHTSPEED ANIMATIONS
+
+@include keyframes(lightSpeedIn) {
+  0% { transform: translateX(100%) skewX(-30deg); opacity: 0;}
+  60% { transform: translateX(-20%) skewX(30deg); opacity: 1;}
+  80% { transform: translateX(0%) skewX(-15deg); opacity: 1;}
+  100% { transform: translateX(0%) skewX(0deg); opacity: 1;}
+}
+
+@mixin lightSpeedIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(lightSpeedIn);
+  @include count($count);
+  @include function(ease-out);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(lightSpeedOut) {
+  0% { transform: translateX(0%) skewX(0deg); opacity: 1;}
+  100% { transform: translateX(100%) skewX(-30deg); opacity: 0;}
+}
+
+@mixin lightSpeedOut($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(lightSpeedOut);
+  @include count($count);
+  @include function(ease-in);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF ROTATING ENTRANCES
+
+@include keyframes(rotateIn) {
+  0% {transform-origin: center center; transform: rotate(-200deg); opacity: 0;}
+  100% {transform-origin: center center; transform: rotate(0); opacity: 1;}
+}
+
+@mixin rotateIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rotateIn);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(rotateInDownLeft) {
+  0% {transform-origin: left bottom; transform: rotate(-90deg); opacity: 0;}
+  100% {transform-origin: left bottom; transform: rotate(0); opacity: 1;}
+}
+
+@mixin rotateInDownLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rotateInDownLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(rotateInDownRight) {
+  0% {transform-origin: right bottom; transform: rotate(90deg); opacity: 0;}
+  100% {transform-origin: right bottom; transform: rotate(0); opacity: 1;}
+}
+
+@mixin rotateInDownRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rotateInDownRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(rotateInUpLeft) {
+  0% {transform-origin: left bottom; transform: rotate(90deg); opacity: 0;}
+  100% {transform-origin: left bottom; transform: rotate(0); opacity: 1;}
+}
+
+@mixin rotateInUpLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rotateInUpLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(rotateInUpRight) {
+  0% {transform-origin: right bottom; transform: rotate(-90deg); opacity: 0;}
+  100% {transform-origin: right bottom; transform: rotate(0); opacity: 1;}
+}
+
+@mixin rotateInUpRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rotateInUpRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF ROTATING EXITS
+
+@include keyframes(rotateOut) {
+  0% {transform-origin: center center; transform: rotate(0); opacity: 1;}
+  100% {transform-origin: center center; transform: rotate(200deg); opacity: 0;}
+}
+
+@mixin rotateOut($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rotateOut);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(rotateOutDownLeft) {
+  0% {transform-origin: left bottom; transform: rotate(0); opacity: 1;}
+  100% {transform-origin: left bottom; transform: rotate(90deg); opacity: 0;}
+}
+
+@mixin rotateOutDownLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rotateOutDownLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(rotateOutDownRight) {
+  0% {transform-origin: right bottom; transform: rotate(0); opacity: 1;}
+  100% {transform-origin: right bottom; transform: rotate(-90deg); opacity: 0;}
+}
+
+@mixin rotateOutDownRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rotateOutDownRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(rotateOutUpLeft) {
+  0% {transform-origin: left bottom; transform: rotate(0); opacity: 1;}
+  100% {transform-origin: left bottom; transform: rotate(-90deg); opacity: 0;}
+}
+
+@mixin rotateOutUpLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rotateOutUpLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(rotateOutUpRight) {
+  0% {transform-origin: right bottom; transform: rotate(0); opacity: 1;}
+  100% {transform-origin: right bottom; transform: rotate(90deg); opacity: 0;}
+}
+
+@mixin rotateOutUpRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rotateOutUpRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF SLIDING ENTRANCES
+
+@include keyframes(slideInDown) {
+  0% {opacity: 0; transform: translateY(-2000px);}
+  100% {transform: translateY(0);}
+}
+
+@mixin slideInDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(slideInDown);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(slideInLeft) {
+  0% {opacity: 0; transform: translateX(-2000px);}
+  100% {transform: translateX(0);}
+}
+
+@mixin slideInLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(slideInLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(slideInRight) {
+  0% {opacity: 0; transform: translateX(2000px);}
+  100% {transform: translateX(0);}
+}
+
+@mixin slideInRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(slideInRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+@include keyframes(slideInUp) {
+  0% {opacity: 0; transform: translateY(2000px);}
+  100% {transform: translateY(0);}
+}
+
+@mixin slideInUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(slideInUp);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF SLIDING EXITS
+
+@include keyframes(slideOutDown) {
+  0% {transform: translateY(0);}
+  100% {opacity: 0; transform: translateY(2000px);}
+}
+
+@mixin slideOutDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(slideOutDown);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(slideOutLeft) {
+  0% {transform: translateX(0);}
+  100% {opacity: 0; transform: translateX(-2000px);}
+}
+
+@mixin slideOutLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(slideOutLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(slideOutRight) {
+  0% {transform: translateX(0);}
+  100% {opacity: 0; transform: translateX(2000px);}
+}
+
+@mixin slideOutRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(slideOutRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(slideOutUp) {
+  0% {transform: translateY(0);}
+  100% {opacity: 0; transform: translateY(-2000px);}
+}
+
+@mixin slideOutUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(slideOutUp);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF SPECIAL ANIMATIONS
+
+@include keyframes(hinge) {
+  0% {
+    transform: rotate(0);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+  }
+  20%, 60% {
+    transform: rotate(80deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+  }
+  40% {
+    transform: rotate(60deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+  }
+  80% {
+    transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    transform-origin: top left;
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+
+@mixin hinge($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(hinge);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(rollIn) {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-120deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
+@mixin rollIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rollIn);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// originally authored by Nick Pettit - https://github.com/nickpettit/glide
+
+@include keyframes(rollOut) {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+
+@mixin rollOut($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(rollOut);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF ZOOMING ENTRANCES
+
+@include keyframes(zoomIn) {
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@mixin zoomIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomIn);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(zoomInDown) {
+  0% {
+    opacity: 0;
+    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+@mixin zoomInDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomInDown);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(zoomInLeft) {
+  0% {
+    opacity: 0;
+    transform: scale3d(.1, .1, .1) translate3d(-1000px, 0, 0);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(10px, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+@mixin zoomInLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomInLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(zoomInRight) {
+  0% {
+    opacity: 0;
+    transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+@mixin zoomInRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomInRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(zoomInUp) {
+  0% {
+    opacity: 0;
+    transform: scale3d(.1, .1, .1) translate3d(0, 1000px, 0);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+@mixin zoomInUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomInUp);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+// INDEX OF ZOOMING EXITS
+
+@include keyframes(zoomOut) {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@mixin zoomOut($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomOut);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(zoomOutDown) {
+  40% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(0, -60px, 0);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
+    transform-origin: center bottom;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+@mixin zoomOutDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomOutDown);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(zoomOutLeft) {
+  40% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(42px, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(.1) translate3d(-2000px, 0, 0);
+    transform-origin: left center;
+  }
+}
+
+@mixin zoomOutLeft($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomOutLeft);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(zoomOutRight) {
+  40% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(-42px, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(.1) translate3d(2000px, 0, 0);
+    transform-origin: right center;
+  }
+}
+
+@mixin zoomOutRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomOutRight);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(zoomOutUp) {
+  40% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
+    transform-origin: center bottom;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+@mixin zoomOutUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomOutUp);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

@@ -1,0 +1,41 @@
+// brand variables
+
+@import 'store/billboard';
+
+// Fonts
+
+$font-title: 'Open Sans', sans-serif;
+$font-text: 'Open Sans', sans-serif;
+$font-mono: "Courier New", Courier, monospace;
+$font-icon: evo;
+
+// Gaps
+
+$font-1: 3px;
+$gap-1: 6px;
+
+// Colors
+$color-0: $bg_color;
+$color-1: $title;
+$color-2: $subtitle;
+$color-3: #2DBBB2;
+$color-4: #ccc;
+$color-5: blue;
+$color-alert: yellow;
+$color-danger: #EC2F32;
+
+// universal rules (try not to change it, and update often)
+
+@import 'base';
+@import 'mixins';
+@import 'colors';
+@import 'icons';
+@import 'visibility';
+@import 'animate/animate';
+@import 'proto';
+@import 'print';
+
+// project rules (feel free to edit)
+
+@import 'layout';
+@import 'modules';

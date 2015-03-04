@@ -1,0 +1,244 @@
+.button {
+  background-color: $color-3;
+  font-weight: bold;
+  color: white;
+  padding: $gap-1 $gap-2;
+  @include box;
+  text-align: center;
+}
+
+input {
+  font-family: $font-text;
+  font-weight: 300;
+  font-size: $font-6;
+}
+
+input:not(.search) {
+  display: inline-block;
+  color: $color-2;
+  border: none;
+  padding: $gap-1 0;
+  background: none;
+  @include box;
+  border-bottom: 1px solid $color-4;
+  header.header & {
+    @include placeholder(false) {
+      color: white;
+      font-family: $font-icon;
+    }
+
+    margin-top: -10px;
+    color: white;
+    border-bottom: 1px solid white !important;
+  }
+  outline: 0;
+  width: 100%;
+  &:hover {
+    border-bottom-color: $color-4;
+  }
+  label.label-floatlabel {
+    text-transform: uppercase;
+    font-size: $font-3-;
+    color: $color-4;
+  }
+  &:focus {
+    border-bottom: 1px solid $color-3;
+    & + label {
+      text-transform: uppercase;
+      color: $color-3;
+    }
+  }
+}
+
+.label-floatlabel {
+  text-transform: uppercase;
+  font-size: $font-3-;
+  color: $color-4;
+}
+
+header.header, .offset-content {
+  .label-floatlabel, input:focus + label {
+    color: white;
+  }
+}
+
+header.header {
+  .label-floatlabel, input:focus + label {
+    text-transform: none;
+    font-family: $font-icon;
+  }
+}
+
+.auth {
+  color: white;
+  @include clear;
+  h1, h2, h2, h4, a {
+    color: white;
+  }
+  a, label {
+    display: block;
+  }
+  input {
+    color: white;
+    @include placeholder {
+      color: white;
+    }
+
+    &[type="radio"], &[type="checkbox"] {
+      displaY: inline-block;
+      width: $radio;
+    }
+  }
+  .actions {
+    padding: $gap-2 0;
+    .button {
+      float: right;
+    }
+  }
+}
+
+input.search {
+  background: none !important;
+  border: none !important;
+  &::-webkit-search-decoration {
+    display: none;
+  }
+}
+
+.alert {
+  background-color: transparentize($color-alert, 0.3);
+  @include shadow(0px 5px 0px rgba(0, 0, 0, 0.07));
+  margin-bottom: $gap-1;
+  color: darken($color-alert, 30%);
+  padding: $gap-1;
+  border-top: solid 1px darken($color-alert, 30%) !important;
+  border-bottom: solid 1px darken($color-alert, 30%) !important;
+  &:before {
+    font-family: $font-icon;
+    content: "o";
+    display: inline-block;
+    vertical-align: top;
+    border-right: solid 1px darken($color-alert, 30%) !important;
+    padding-right: 7px;
+    font-size: 20px;
+    margin-right: 5px;
+  }
+}
+
+.filter-group {
+  header {
+    margin: $gap-2;
+    margin-bottom: 0;
+    border-bottom: solid 2px #8F8F8F;
+    h3 {
+      display: inline-block;
+      color: #333;
+    }
+    a {
+      float: right;
+      color: $color-3;
+      font-size: $font-4;
+      text-decoration: none;
+      &:after {
+        content: "G";
+        font-family: $font-icon;
+        margin-left: 5px;
+      }
+    }
+  }
+  .filter {
+    width: 100%;
+    padding: 0 $gap-2;
+    @include clear;
+    @include box;
+    font-size: $font-4;
+    @include media($device, max) {
+      font-size: $font-5;
+    }
+
+    &:first-of-type {
+      padding-top: $gap-1;
+    }
+    &:last-of-type {
+      padding-bottom: $gap-1;
+    }
+    @include media(iphone6, portrait) {
+      &:first-of-type {
+        padding-top: $gap-2;
+      }
+      &:last-of-type {
+        padding-bottom: $gap-2;
+      }
+    }
+
+    p, select, label, input[type="range"] {
+      float: left;
+      vertical-align: bottom;
+    }
+    select {
+      width: 110px;
+      margin-right: 20px;
+      background-image: url(../images/chevron_mini.png);
+      border: solid 1px #666 !important;
+      padding: 3px;
+      @include box;
+      @include media($device, max) {
+        font-size: $font-5;
+        width: 150px;
+        padding: 10px;
+      }
+    }
+    input[type="range"] {
+      width: 120px;
+      padding: 0;
+      margin: 0;
+      margin-top: 7px;
+      @include media($device, max) {
+        width: 150px;
+        margin-top: 13px;
+        margin-left: 5px;
+      }
+    }
+    label {
+      @include media($device, max) {
+        padding-top: 10px;
+      }
+    }
+    input[type="checkbox"] {
+      width: auto;
+      display: inline-block;
+    }
+    p {
+      width: 60px;
+      padding-top: 4px;
+      font-size: $font-4 !important;
+      @include media($device, max) {
+        padding-top: 13px !important;
+        width: 80px;
+        font-size: $font-5 !important;
+      }
+
+      &:nth-of-type(2) {
+        width: 40px;
+      }
+    }
+    @include media(iphone6, portrait) {
+      text-align: center;
+      p:nth-of-type(2) {
+        width: 75px;
+        text-align: left;
+        padding-left: 10px;
+        @include box;
+      }
+      select, input[type="range"] {
+        width: 190px;
+      }
+      label {
+        width: 100%;
+      }
+      input[type="range"] {
+        margin-bottom: $gap-2;
+      }
+    }
+  }
+}

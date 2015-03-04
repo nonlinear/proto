@@ -1,0 +1,40 @@
+.offset-content {
+  select {
+    display: block;
+    width: 100%;
+  }
+  a, select {
+    color: white;
+    displaY: block;
+    border: none;
+    border-bottom: solid 1px white;
+    padding: $gap-1 0;
+    font-size: $font-6;
+    text-decoration: none;
+    i {
+      font-size: $font-12;
+      height: 30px;
+      overflow: hidden;
+      displaY: inline-block;
+
+    }
+  }
+}
+select {
+  background: none;
+  @include radius(0);
+  font-family: $font-text;
+  font-weight: 300;
+  -webkit-appearance:none;
+  background-image: url(../images/chevron.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  &:before {
+    border: dashed 1px red !important;
+    content: "x" !important;
+    display: block;
+    @include square(20px);
+  }
+}
+

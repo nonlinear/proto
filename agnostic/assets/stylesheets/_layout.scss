@@ -1,0 +1,68 @@
+$device: 1000px;
+$logo-width: 200px;
+$hero-height: 250px;
+$search-height: 70px;
+$logo-height: 75px;
+$radius: 5px;
+$container: 1300px;
+
+$offset: 250;
+$offset-neg: $offset * -1;
+$offset-shadow: $gap-1;
+$radio: 20px;
+
+$list: 375px;
+$instant: 2px;
+
+@include font-face(evo);
+
+body, h1, h2, h3, h4 {
+  margin: 0;
+  margin-bottom: $gap-1;
+  font-size: $font-4-;
+  font-weighT: 300;
+  background-color: $color-3;
+  @include media($device, max) {
+    background-color: white;
+  }
+}
+
+p {
+  margin: 0;
+  margin-bottom: 10px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.title {
+  font-weighT: bold;
+}
+
+.container {
+  @include media($device, min) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: $container;
+    @include media($container, max) {
+      max-width: 100%;
+      padding: 0 $gap-1;
+    }
+  }
+
+  @include box;
+}
+
+.visible-device {
+  display: none !important;
+  @include media($device, max) {
+    display: block !important;
+  }
+}
+
+.hidden-device {
+  display: block !important;
+  @include media($device, max) {
+    display: none !important;
+  }
+}

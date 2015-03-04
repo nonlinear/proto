@@ -1,0 +1,124 @@
+.offset-main, body, html, section.container {
+  height: 100% !important;
+}
+
+section.container {
+  body:not(#select) & {
+    padding: $gap-2;
+  }
+  background-color: white;
+  #select & {
+    @include media($device, min) {
+      display: table;
+      widtH: 100%;
+    }
+    article {
+      @include media($device, min) {
+        display: table-cell;
+      }
+      vertical-align: top;
+      &.list {
+        @include media($device, min) {
+          width: $list;
+          border-right: solid 1px #CFCFCF;
+        }
+        @include media($device, max) {
+          header, nav {
+         display: none;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+article.map {
+  &.collapse-watch {
+    @extend .visible-device;
+    .collapse-content {
+      background-color: #E8E8E8;
+      img {
+        mix-blend-mode: multiply;
+      }
+    }
+    header.main {
+      display: table;
+      padding: 0;
+      background-color: #6e6c6d;
+      width: 100%;
+      color: white;
+      text-align: center;
+      vertical-align: middle;
+      border-top: solid 1px #E8E8E8;
+      .collapse-toggle, .filter-toggle, .event {
+        displaY: table-cell;
+        vertical-align: middle;
+        padding: $gap-2 $gap-1;
+      }
+      .event {
+        width: 100%;
+      }
+    }
+  }
+  &.large {
+    @extend .hidden-device;
+  }
+  img {
+    z-index: 99;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include box;
+    @extend .animated;
+    @extend .fadeInDown;
+    @include media($device, min) {
+      max-width: 100%;
+      padding: $gap-4;
+    }
+    @include media($device, max) {
+      max-height: 300px;
+      padding: $gap-1;
+    }
+    @include media(iphone6, portrait) {
+      max-height: 230px;
+    }
+  }
+  nav {
+    padding: $gap-3;
+    @include media($device, max) {
+      padding: 0;
+      padding-top: $gap-1;
+    }
+
+    position: absolute;
+    z-index: 100;
+    a {
+      display: block;
+      text-decoration: none;
+      font-size: $font-12;
+      line-height: $font-10;
+      margin-bottom: $gap-2;
+      @include media($device, max) {
+        margin-bottom: $gap-1;
+      }
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+  &.collapse-watch {
+    &:not(.collapse-active) {
+      nav {
+        display: none;
+      }
+    }
+    &.collapse-active {
+      nav, img {
+        @extend .animated;
+        @extend .fadeInDown;
+      }
+    }
+  }
+}

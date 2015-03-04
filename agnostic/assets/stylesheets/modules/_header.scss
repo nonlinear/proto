@@ -1,0 +1,42 @@
+header.header {
+  height: $logo-height;
+  background-color: #6e6c6d;
+  color: white;
+  @include media($device, min) {
+    a.logo, .event, .actions {
+      float:left;
+    }
+  }
+  .event {
+    @include media($device, min) {
+      border-left: solid 1px white;
+      padding: $gap-1 $gap-2;
+      margin: $gap-2;
+      height: ($logo-height - $gap-6);
+    }
+    @include media($device, max) {
+      display: none;
+    }
+  }
+  .actions {
+    float:right !important;
+    font-size: $font-12;
+    padding-top: $gap-3;
+    @include media($device, max) {
+      margin-top: -63px;
+      padding: $gap-1;
+
+    }
+  }
+}
+a.logo {
+  width: $logo-width;
+  height: $logo-height;
+  background-color: #615f60;
+  display: inline-block;
+  @include media($device, max) {
+    display: block;
+    margin: 0 auto;
+  }
+}
+

@@ -1,0 +1,56 @@
+.hero {
+  @include gradient(transparentize($color-1, .7), $color-1);
+  @include shadow(0px 5px 0px rgba(0, 0, 0, .05));
+  height: $hero-height;
+  #select & {
+    display: none;
+  }
+  .container {
+    padding-top: (($hero-height - $search-height) / 2);
+  }
+  .container  > .search {
+    height: $search-height;
+    @include shadow(0px 5px 0px rgba(0, 0, 0, .05));
+    input {
+      width: $container - $search-height;
+      //stupid fixes for percentage vs pixel...
+      @include media($container, max) {
+        width: 90%;
+      }
+      @include media(615px, max) {
+        width: 85%;
+      }
+      @include media(420px, max) {
+        width: 75%;
+      }
+      @include media(240px, max) {
+        width: 70%;
+      }
+    }
+    .results {
+      width: $container;
+      @include media($container, max) {
+        width: 100%;
+      }
+      display: none;
+      margin-left: -6px;
+      margin-top: 3px;
+      padding: 10px;
+      @include shadow(0px 5px 0px rgba(0, 0, 0, .05));
+      @include radius-custom(0, 0, $radius, $radius);
+      @include box;
+      border: solid 1px #666;
+      border-right-color: #999;
+      border-top-color: #999;
+      border-top-style: dashed;
+      background-color: white;
+    }
+    &.active {
+      @include radius-custom($radius, $radius, 0, 0);
+      border-bottom-color: white;
+      .results {
+        display: block;
+      }
+    }
+  }
+}

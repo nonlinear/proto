@@ -1,0 +1,53 @@
+.search:not(.icon) {
+  width: 100%;
+  border: solid 1px #666;
+  border-right-color: #999;
+  border-bottom-color: #999;
+  background-color: white;
+  @include radius($radius);
+  padding: 5px;
+  @include box;
+  vertical-align: top;
+  &:focus {
+    input {border: dotted 1px green !important;
+        }
+  }
+  label {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 5px;
+    font-size: $font-2;
+    @include opacity(0);
+  }
+  input {
+    height: $search-height - 10px;
+    @include box;
+border: none;
+        padding-left: $gap-2;
+        font-family: $font-title;
+        font-weight: 300;
+        font-size: $font-3;
+        line-height: $font-3;
+    @include placeholder {
+padding-bottom: 20px !important;
+
+
+
+    }
+  }
+}
+.btn {
+  border: solid 1px #666;
+  border-left-color: #999;
+  border-top-color: #999;
+  background-color: #eee;
+  @include radius($radius);
+  vertical-align: top;
+  display: inline-block;
+  @include box;
+  float: right;
+  text-align: center;
+  padding-top: 10px;
+  @include square($search-height - 12px);
+  color: black;
+}

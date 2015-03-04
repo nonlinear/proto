@@ -1,0 +1,282 @@
+.note-toggle, .note-content {
+  display: none;
+}
+.note-watch {
+  .grid {
+    margin-bottom: 0;
+  }
+  .note-content {
+    height: 0;
+    @include trans;
+    overflow: hidden;
+    display: block;
+    background-color: #E6E6E6;
+    padding: $gap-2;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    margin-bottom: $gap-1;
+  }
+  .note-toggle {
+    display: inline-block;
+    font-size: $font-4;
+    color: #333;
+    text-decoration: none;
+    border-bottom: dotted 1px #999;
+    &:hover {
+      border-bottom: solid 1px #999;
+    }
+    &:after {
+      font-family: $font-icon;
+      content: "A";
+      float: left;
+      font-size: $font-3-;
+      width: 14px;
+      margin-top: 3px;
+      margin-left: -3px;
+    }
+    &:before {
+      content: "View "
+    }
+  }
+  &.note-active {
+    .note-content {
+      border-top: solid 1px #CFCFCF;
+      border-bottom: solid 1px #F7F7F7;
+      height: auto;
+      padding: $gap-2;
+      padding-top: $gap-1;
+    }
+    .note-toggle {
+      &:after {
+        content: "z";
+      }
+      &:before {
+        content: "Hide "
+      }
+    }
+  }
+}
+.offset-main {
+  @include trans;
+}
+.offset-content {
+  position: fixed;
+  width: $offset +px;
+  padding: $gap-2;
+  padding-top: $gap-7;
+  background-color: darken($color-3, 10%);
+  padding-left: ($gap-2 - $offset-shadow);
+  border-left: solid $offset-shadow darken($color-3, 12%);
+  height: 100%;
+  @include translate($offset, 0);
+  right: 0;
+  @include box;
+  @include trans;
+  p.todo {
+    margin: $gap-2 0;
+  }
+  .offset-toggle {
+    display: none;
+    border: none;
+    top: 5px;
+    right: 8px;
+    position: absolute;
+    font-size: $font-10;
+  }
+}
+.offset-watch {
+  .offset-toggle {
+    color: white;
+    text-decoration: none;
+    &:before {
+      content: "F";
+      font-family: $font-icon;
+    }
+  }
+  &.offset-active {
+    .offset-toggle {
+      &:before {
+        content: "q";
+      }
+    }
+    .offset-content {
+      @include translate(0, 0);
+      .offset-toggle {
+        display: block;
+      }
+    }
+    .offset-main {
+      @include translate($offset-neg, 0);
+    }
+  }
+}
+
+
+.search-watch {
+  .search-content {
+    @extend .hidden-device;
+    float: left;
+    width: 0;
+    @include opacity(0);
+    @include trans;
+    height: 50px !important;
+    @include box;
+    overflow: hidden;
+    margin-top: -5px;
+    margin-right: $gap-1;
+
+  }
+  .search-toggle {
+    color: white;
+    text-decoration: none;
+    float: left;
+    @include media($device, max) {
+      display: none;
+    }
+    &:before {
+      content:"c";
+      font-family: $font-icon;
+      display: block;
+    }
+  }
+  &.search-active {
+    .search-content {
+      width: auto;
+      overflow: visible;
+      @include opacity(100);
+
+    }
+    .search-toggle {
+      display: none;
+    }
+  }
+}
+.search-content {
+  @include radius(5px);
+  background-color: white;
+  padding: $gap-1;
+  height: 50px;
+  overflow: none;
+  @include box;
+  i.icon-search {
+    color: black;
+    font-size: $font-12;
+  }
+  i.icon-search, input.search {
+    displaY: inline !important;
+
+    vertical-align: top;
+  }
+  input.search {
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+  }
+  .offset-content & {
+    @extend .visible-device;
+    input.search {
+      width: 170px;
+      margin: 0;
+    }
+  }
+}
+
+
+
+.collapse-toggle, .collapse-content, .filter-toggle, .filter-content {
+  display: none;
+}
+.collapse-watch, .filter-watch {
+  .collapse-content, .filter-content {
+    height: 0;
+    @include trans;
+    overflow: hidden;
+    display: block;
+    padding: $gap-2;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .collapse-toggle, .filter-toggle {
+    display: block;
+    font-size: $font-3-;
+    color: white;
+    padding: $gap-2 0;
+    text-decoration: none;
+    text-align: center;
+    @include clear;
+    &:before {
+      font-family: $font-icon;
+      content: "A";
+      display: block;
+      font-size: $font-7;
+      width: 14px;
+      float: none;
+      width: 100%;
+      line-heighT: $font-4;
+      text-align: center;
+
+    }
+    & span:before {
+      content: "View ";
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+  &.collapse-active {
+    .collapse-content {
+      height: auto;
+      padding: $gap-2;
+      padding-top: $gap-1;
+    }
+    .collapse-toggle {
+      &:before {
+        content: "z";
+      }
+      & span:before {
+        content: "Hide "
+      }
+    }
+  }
+  &.filter-active {
+    .filter-content {
+      height: auto;
+      padding: $gap-2;
+      padding-top: $gap-1;
+
+    }
+    .filter-toggle {
+      &:before {
+        content: "z";
+      }
+      & span:before {
+        content: "Hide "
+      }
+    }
+  }
+}
+
+.filter-content.filter-group {
+  @include reset(all);
+  nav {
+    display: none;
+    @include box;
+  }
+  .filter-watch.filter-active & {
+    height: 150px;
+    @include media(iphone6, portrait) {
+      height: 235px;
+    }
+    nav {
+      display: block;
+    }
+    header {
+      @extend .animated;
+      @extend .fadeInDown;
+    }
+  }
+
+}

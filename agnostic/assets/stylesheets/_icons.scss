@@ -1,0 +1,143 @@
+ul.stars {
+  @include reset(list);
+  @include reset(all);
+
+  li {
+    display: inline-block;
+    margin-left: -5px;
+    &:before {
+      font-size:20px;
+      line-height: 20px;
+      content: '☆';
+    }
+
+  }
+  &.one, &.two, &.three, &.four, &.five {
+    li:first-of-type:before {
+      content: '★';
+    }
+  }
+  &.two, &.three, &.four, &.five {
+    li:nth-of-type(2):before {
+      content: '★';
+    }
+  }
+  &.three, &.four, &.five {
+    li:nth-of-type(3):before {
+      content: '★';
+    }
+  }
+  &.four, &.five {
+    li:nth-of-type(4):before {
+      content: '★';
+    }
+  }
+  &.five {
+    li:nth-of-type(5):before {
+      content: '★';
+    }
+  }
+
+
+}
+
+i.icon {
+  font-style: normal;
+  display: inline-block;
+  &:before {
+    font-size:30px;
+    line-height: 30px;
+  }
+  &.search:before {
+    content: '\26B2';
+  }
+  &.menu:before {
+    content: '☰';
+  }
+  &.cancel:before {
+    content: '\2A2F';
+    font-size: 400%;
+  }
+  &.alert:before {
+    content: '⚠';
+  }
+  &.star:before {
+    content: '★';
+  }
+  &.star-alt:before {
+    content: '☆';
+  }
+  &.cloud:before {
+    content: '☁';
+  }
+  &.music:before {
+    content: '♫';
+  }
+  &.floral:before {
+    content: '❦';
+  }
+  &.floral-alt:before {
+    content: '\2767';
+  }
+  &.flag:before {
+    content: '\2691';
+  }
+  &.flag-alt:before {
+    content: '\2690';
+  }
+  &.paragraph:before {
+    content: '\204B';
+  }
+  &.undo:before {
+    content: '\21A9';
+  }
+  &.undo-alt:before {
+    content: '\21B5';
+  }
+  &.redo:before {
+    content: '\21AA';
+  }
+  &.redo-alt:before {
+    content: '\21B3';
+  }
+  &.plus:before {
+    content: '\2795';
+  }
+  &.minus:before {
+    content: '\2796';
+  }
+  &.plus-alt:before {
+    content: '\2295';
+  }
+  &.minus-alt:before {
+    content: '\2296';
+  }
+  &.reload:before {
+    content: '\21BB';
+  }
+  &.dropdown:before {
+    content: '\25B4';
+  }
+  &.dropdown-up:before {
+    content: '\25B4';
+  }
+  &.arrow-right:before, &.arrow-left:before, &.arrow-up:before, &.arrow-down:before {
+    content: '\2794';
+  }
+  &.arrow-alt-right:before, &.arrow-alt-left:before, &.arrow-alt-up:before, &.arrow-alt-down:before {
+    content: '\279C';
+  }
+  &.search {
+    @include rotate(-45);
+  }
+
+  &.dropdown, &.arrow-right, &.arrow-alt-right {
+    @include rotate(180);
+  }
+  &.arrow-down, &.arrow-alt-down {
+    @include rotate(90);
+  }
+  &.arrow-up, &.arrow-alt-up {
+    @include rotate(-90);
+  }
+}

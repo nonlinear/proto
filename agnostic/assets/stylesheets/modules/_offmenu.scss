@@ -1,0 +1,128 @@
+$offmenu-width:             200px;     // menu width
+$offmenu-duration:          .4s;       // appear duration
+$offmenu-position:          right;      // menu position: left|right
+$offmenu-animate:           true;      // true|false, requires _animate.scss
+
+$offmenu-fade:              true;
+$offmenu-container-blur:    false;
+
+.offmenu {
+  width: $offmenu-width;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  @include trans;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  padding: 20px;
+  @include box;
+  background: #111;
+  color: white;
+  @if $offmenu-fade == true {
+    @include opacity(0);
+    #offmenu-toggle:checked + & {
+      @include opacity(100);
+    }
+  }
+
+  @if $offmenu-position == "left" {
+    left: 0;
+  }
+  @else if $offmenu-position == "right" {
+   right: 0;
+ }
+}
+
+
+
+.offmenu-content {
+  min-height: 100%;
+  min-width: 100%;
+  background-color: $color-0;
+  position: relative;
+  top: 0 !important;
+  bottom: 100%;
+  @if $offmenu-position == "left" {
+    left: 0;
+  }
+  @else if $offmenu-position == "right" {
+   right: 0;
+ }
+ z-index: 1;
+}
+
+
+label[for="offmenu-toggle"] {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+
+  &:before {
+    content: '☰';
+      vertical-align: middle;
+    font-size: 30px;
+    padding: 5px;
+    @if $offmenu-animate == true {
+      @if $offmenu-position == "left" {
+        // fadeInLeft;
+      }
+      @else if $offmenu-position == "right" {
+       // fadeInRight;
+      }
+    }
+    #offmenu-toggle:checked ~ & {
+    content: '╳';
+    @if $offmenu-animate == true {
+      // rotateIn;
+    }
+  }
+  }
+  @if $offmenu-position == "left" {
+    left: 0;
+  }
+  @else if $offmenu-position == "right" {
+    right: 0;
+  }
+}
+
+#offmenu-toggle {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  &:checked {
+    & ~ label[for="offmenu-toggle"] {
+      @if $offmenu-position == "left" {
+        left: $offmenu-width;
+      }
+      @else if $offmenu-position == "right" {
+       right: $offmenu-width;
+     }
+   }
+   & ~ .offmenu-content {
+    @if $offmenu-container-blur == true {
+      * {
+        @include trans;
+        @include filter(blur, 2px);
+      }
+    }
+    @if $offmenu-position == "left" {
+     left: $offmenu-width;
+   }
+   @else if $offmenu-position == "right" {
+     right: $offmenu-width;
+   }
+ }
+}
+}
+
+#offmenu-toggle ~ label[for="offmenu-toggle"], .offmenu-content {
+  transition: $offmenu-position $offmenu-duration;
+}
+body {
+  overflow-x: hidden;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}

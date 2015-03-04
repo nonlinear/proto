@@ -1,0 +1,76 @@
+.row .grid {
+  @include grid(3, $collapse: false);
+  @include box;
+  @include clear;
+  background-color: #F6F6F6;
+  border-bottom: solid 1px #E6E6E6;
+  margin-bottom: $gap-1;
+  .column {
+    vertical-align: middle;
+    padding: $gap-2 $gap-1 $gap-2 $gap-2;
+    @include box;
+    &.info {
+      min-width: 120px;
+      width: 120px;
+      float: left;
+      color: #333333;
+    }
+    .instant {
+      color: $color-danger;
+      vertical-align: top;
+      font-size: $font-3-;
+      &:before {
+        font-family: $font-icon;
+        vertical-align: top;
+        content: "w";
+        margin-lefT: -3px;
+        font-size: $font-4-;
+      }
+    }
+    &.details {
+      border-left: solid 1px #E6E6E6;
+      color: #2EBBB3;
+      width: 100%;
+
+      .price {
+        font-size: $font-8-;
+        line-height: $font-7;
+        span {
+          font-size: $font-5;
+          margin-left: -5px;
+        }
+      }
+      .shipping {
+        font-size: $font-4;
+        line-height: $font-5;
+      }
+    }
+    &.action {
+      padding-left: 0;
+      padding-right: $gap-2;
+      min-width: 75px;
+      width: 75px;
+    }
+  }
+}
+.title {
+  font-size: $font-5;
+}
+.subtitle {
+  font-size: $font-4;
+}
+.row {
+  &:not(.instant) {
+    .instant {
+      display: none;
+    }
+  }
+  &.instant {
+    .column.info {
+      border-left: solid $instant $color-danger;
+      padding-left: ($gap-2 - $instant);
+    }
+  }
+}
+
+

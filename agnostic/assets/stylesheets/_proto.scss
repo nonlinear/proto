@@ -1,0 +1,137 @@
+.proto {
+  background: #ccc;
+  font-family: $font-title;
+  padding-top: $gap-3;
+  h1, h2, h3, h4 {
+    padding-left: 0 !important;
+    margin-top: 0;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: transparent;
+    font-weight: bold !important;
+  }
+  .container {
+    width: 900px;
+  }
+  .grid {
+    background: #ccc;
+    border: none;
+  }
+  a.bookmarklet {
+    @include hide-text;
+    vertical-align: middle;
+    text-decoration: none;
+    display: inline-block;
+    float:right;
+    &:before {
+      content: "Resizer Bookmarklet";
+      font-size: 12px;
+      background-color: #ccc;
+      border: solid 1px #999;
+      font-size: 12px;
+      text-align: center;
+      padding: 15px 10px;
+      @include radius(3px);
+      @include shadow(1px 2px 0px rgba(0, 0, 0, .1));
+      font-family: $font-text;
+      font-weight: 300;
+      display: block;
+      color: black;
+    }
+    &:hover:before {
+      content: "drag to bookmark list";
+    }
+
+  }
+  .footer {
+    border-top: solid 1px #999;
+    margin-top: $gap-2;
+    padding-top: $gap-2;
+    background: none;
+    color: #262626;
+  }
+  .sig {
+    font-family: $font-text !important;
+    font-size: 90%;
+    font-style: italic;
+    &:last-of-type {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
+  }
+  .grid {
+    @include grid(3, 30px, true, #999);
+  }
+  p.sig {
+    font-family: $font-title;
+  }
+  a {
+    display: inline !important;
+
+    &:not(.not) {
+      color: #2175BD !important;
+    }
+    &.not {
+      text-decoration: line-through;
+      pointer-events: none;
+      cursor: default;
+      color: #999;
+    }
+  }
+  h1, h2, h3 {
+    font-weight: 300;
+    color: #333;
+  }
+  hr {
+    border-top: solid 1px #999;
+    margin: $gap-1 0;
+  }
+  h4 {
+    border-bottom: solid 1px #999;
+    margin-bottom: $gap-2;
+    padding-bottom: $gap-2;
+    padding-left: $gap-4;
+  }
+  &:before, &:after {
+    font-size: 20px !important;
+    height: 35px !important;
+  }
+  &:after {
+    top: 37px !important;
+  }
+  ul, ol {
+    list-style-type:  none;
+    padding: 0;
+    margin: 0;
+    &:not(.menu) a {
+      display: block;
+    }
+    li {
+      padding: 5px;
+      @include trans;
+      &:hover {
+        @include shadow(0px 0px 10px rgba(0, 0, 0, .2));
+      }
+    }
+    &.menu {
+      li {
+        @include clear;
+      }
+      a {
+        float: right;
+        border-left: solid 1px #999;
+        padding-left: 5px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+
+p.todo {
+  display: inline-block;
+  color: white;
+  padding: $gap-1;
+  font-size: $font-4;
+  background-color: darken(red, 10%);
+}

@@ -1,0 +1,27 @@
+$store_name: "Billboard";
+$bg_image: "";
+$hero_image: "store/billboard/hero.png";
+$logo_image: "store/billboard/logo.png";
+// stretch, title, none
+$bg_type: none;
+// img, text
+$logo_type: img;
+$bg_color: white;
+$search_button_bg: #a2000d;
+$search_button_font: white;
+$nav_font: black;
+$nav_font_hover: $nav_font;
+// $nav_bg: white;
+$nav_border: black;
+$nav_menu_bg: #fc666a;
+$nav_menu_bg_hover: lighten($nav_menu_bg, 10%);
+$title: #38b2ee;
+$subtitle: #999999;
+$button_bg: #fc666a;
+$button_font: white;
+$button_border: #F90018;
+$footer_bg: black;
+$footer_font: white;
+$row_border: #406180;
+$row_color: #8EB2CF;
+$form_color: #406180;
