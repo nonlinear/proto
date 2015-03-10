@@ -206,7 +206,7 @@
             display: block;
         }
 
-        & > .cell, & > article, & > li, & > dt, & > section, & > .column {
+        & > * {
             display: table-cell;
             width: 100% / $column;
             padding: 0;

@@ -135,3 +135,29 @@ p.todo {
   font-size: $font-4;
   background-color: darken(red, 10%);
 }
+
+.persona {
+
+  @include grid(6, 20px, true, #ccc);
+  background-color: white;
+
+  .avatar {
+    @extend .times2;
+    background-image: url("../images/james.png");
+background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
+
+    h1, p {
+      padding: $gap-half !important;
+      padding-left: $gap-1 !important;
+      width: 50%;
+
+
+    }
+  }
+}
